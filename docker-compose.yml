@@ -1,0 +1,14 @@
+services:
+  rabbitmq:
+    image: docker.io/ennery/costum-rabbitmq-4.0:latest
+    container_name: delayed-rabbitmq-message-article
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+volumes:
+  rabbitmq:
